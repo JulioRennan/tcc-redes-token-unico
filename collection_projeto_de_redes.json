@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "c037aff9-608f-45e1-a2f5-14f7c376f121",
+		"name": "Projeto de Redes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20510040"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Criar usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"julio Rennan\",\n    \"email\":\"julio.rennann1@gmail.com\",\n    \"password\":\"senha123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fazer ação apenas com JWT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkowQjdPTno3R3ZidlhNbUROV0hsIiwibmFtZSI6Imp1bGlvIFJlbm5hbiIsImVtYWlsIjoianVsaW8ucmVubmFubkBnbWFpbC5jb20iLCJhcnJheV90aW1lc3RhbXBzIjpbMTY3MDUyMjcyNzIyOV0sImlhdCI6MTY3MDUyMjc3OSwiZXhwIjoxNjcwNTI2Mzc5fQ.d9Y2F2bxHjiTjdx_GfXmfywhaeuMIE8yY3OTOoLpgTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/action",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fazer acão com novo protocolo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkowQjdPTno3R3ZidlhNbUROV0hsIiwibmFtZSI6Imp1bGlvIFJlbm5hbiIsImVtYWlsIjoianVsaW8ucmVubmFubkBnbWFpbC5jb20iLCJpYXQiOjE2NzA1MjI3MDgsImV4cCI6MTY3MDUyNjMwOH0.DssELxea8mohKEeQFf3JRthU7gW34GfXbcGpDOqSdsc.VTJGc2RHVmtYMTlIOVBMRW50VnJHck1kYk1aRXFvb2hweksycVB2YWlTVT0=",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/action-new-protocol",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"action-new-protocol"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Fazer login do usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"julio.rennann@gmail.com\",\n    \"password\":\"senha123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/sign-in",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gerar novo access token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkowQjdPTno3R3ZidlhNbUROV0hsIiwibmFtZSI6Imp1bGlvIFJlbm5hbiIsImVtYWlsIjoianVsaW8ucmVubmFubkBnbWFpbC5jb20iLCJpYXQiOjE2NzAyOTM1NDV9.jerViZ5Ywk7QkTNDmkIpcl4-meZ2LBUMpiDs8lYATpQ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/access-token",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"access-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gerar novo access com novo protocolo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkowQjdPTno3R3ZidlhNbUROV0hsIiwibmFtZSI6Imp1bGlvIFJlbm5hbiIsImVtYWlsIjoianVsaW8ucmVubmFubkBnbWFpbC5jb20iLCJpYXQiOjE2NzA1MjI3MDgsImV4cCI6MTY3MDUyNjMwOH0.DssELxea8mohKEeQFf3JRthU7gW34GfXbcGpDOqSdsc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/access-token-new-protocol",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"access-token-new-protocol"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
